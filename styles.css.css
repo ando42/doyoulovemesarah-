@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffccff, #ff99cc);
+}
+
+.emoji-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><text x="0" y="35" font-size="40">&#10084;&#65039;</text></svg>') repeat;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    animation: bounceIn 1s;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+h1, h2, h3 {
+    color: #4d40d6;
+    margin: 10px 0;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.question {
+    margin: 20px 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 1.5em;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 10.3s;
+}
+
+#yesButton {
+    background-color: #ff66b2;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 102, 178, 0.5);
+}
+
+#noButton {
+    background-color: #ff4d4d;
+    color: white;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#celebration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    display: none; /* Initially hidden */
+}
+
+.celebrate-message {
+    font-size: 3em;
+    color: black; /* Updated color to black */
+    animation: pop 0.5s ease-in-out forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.8;
+}
